@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <h1 class="text-blue-800 mb-10">Edit profile</h1>
+    <%= form_with(model: @user, url: update_user_path, method: :patch) do |f| %>
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname %>
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname%>
+      <%= f.label :email %>
+      <%= f.email_field :email%>
+      <%= f.label :password %>
+      <%= f.password_field :password%>
+      <%= f.submit "Update", class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being updated:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

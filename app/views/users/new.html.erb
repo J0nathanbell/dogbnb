@@ -1,16 +1,16 @@
-<h1>Sign Up</h1>
-<%= form_with model: @user, local: true do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-  <%= form.submit "Sign Up" %>
-<% end %>
+<div class="">
+  <h1 class="font-bold text-3xl text-blue-700">Create user page</h1>
+  <%= form_with(model: @user, html: {class:"flex flex-col"}) do |f| %>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Submit", class:"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"%>
+  <% end %>
+</div>
