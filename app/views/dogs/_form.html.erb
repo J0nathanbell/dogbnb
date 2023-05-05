@@ -1,0 +1,33 @@
+<%= form_with(model: dog, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :bio %>
+    <%= form.text_area :bio %>
+  </div>
+  <div>
+    <%= form.label :image, 'Upload Image' %>
+    <%= form.file_field :image %>
+  </div>
+  <div>
+    <%= form.label :excitement %>
+    <%= form.number_field :excitement %>
+  </div>
+  <div>
+    <%= form.label :energy %>
+    <%= form.number_field :energy %>
+  </div>
+  <div>
+    <%= form.label :laziness %>
+    <%= form.number_field :laziness %>
+  </div>
+  <div>
+    <%= form.label :fun %>
+    <%= form.number_field :fun %>
+  </div>
+  <div>
+    <%= form.submit dog.new_record? ? 'Create Dog' : 'Update Dog' %>
+  </div>
+<% end %>

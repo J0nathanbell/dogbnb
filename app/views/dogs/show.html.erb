@@ -1,0 +1,13 @@
+<h1><%= @dog.name %></h1>
+<% if @dog.image.attached? %>
+  <%= image_tag url_for(@dog.image), alt: @dog.name, size: "100x100", id: "dog_image" %>
+<% else %>
+  <p>No image available</p>
+<% end %>
+<h2>Stats</h2>
+<ul>
+  <li>Excitement: <%= @dog.excitement %></li>
+  <li>Energy: <%= @dog.energy %></li>
+  <li>Laziness: <%= @dog.laziness %></li>
+  <li>Fun: <%= @dog.fun %></li>
+</ul>

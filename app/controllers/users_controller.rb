@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # makes sure the filds in the form are blank for a new user
   def new
     @user = User.new
   end

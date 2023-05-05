@@ -1,11 +1,1 @@
-<div>
-  <h1 class="font-bold text-4xl">Home Page</h1>
-  <% if current_user %>
-    <p>Welcome, <%= current_user.firstname.capitalize() %>!</p>
-    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"><%= link_to 'Profile', user_path(current_user.id)%></button>
-    <%= button_to "Log out", logout_path, method: :delete, class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
-  <% else %>
-    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"><%= link_to 'Log in', login_path %></button>
-    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"><%= link_to 'create Profile', signup_path %></button>
-  <% end %>
-</div>
+<%= render 'shared/nav' %>
